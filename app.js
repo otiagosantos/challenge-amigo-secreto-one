@@ -4,6 +4,7 @@ let amigos = [];
 
 let amigoInputElement = document.querySelector("#amigo");
 let listaAmigosElement = document.querySelector("#listaAmigos");
+let resultadoElement = document.querySelector("#resultado");
 
 function adicionarAmigo() {
     if (amigoInputElement.value == "") {
@@ -14,7 +15,6 @@ function adicionarAmigo() {
     amigos.push(amigoInputElement.value);
     renderizaListaAmigos();
 
-    console.log(amigos);
     amigoInputElement.value = ""
 }
 
@@ -25,4 +25,20 @@ function renderizaListaAmigos() {
         item.innerHTML = amigos[i];
         listaAmigosElement.appendChild(item);
     }
+}
+
+function sortearAmigo() {
+    if(amigos.length == 0) {
+        alert("A lista não tem nomes.");
+        return
+    }
+    let tamanhoLista = amigos.length;
+
+    let numeroSorteado = parseInt(Math.random() * tamanhoLista);
+
+    renderizaResultado(amigos[numeroSorteado])
+}
+
+function renderizaResultado(nomeResultado) {
+   resultadoElement.innerHTML = nomeResultado; 
 }
