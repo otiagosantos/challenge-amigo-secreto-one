@@ -3,7 +3,6 @@
 let amigos = [];
 
 let amigoInputElement = document.querySelector("#amigo");
-let adicionarAmigoButtonElement = document.querySelector(".input-wrapper .button-add");
 let listaAmigosElement = document.querySelector("#listaAmigos");
 
 function adicionarAmigo() {
